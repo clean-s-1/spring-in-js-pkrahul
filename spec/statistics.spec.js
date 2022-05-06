@@ -1,5 +1,8 @@
-//const getStatistics=require("../app/statistics");
-import {getStatistics,EmailAlert,LEDAlert,StatsAlerter} from '../app/statistics';
+const getStatistics=require("../app/statistics");
+const EmailAlert = require("../app/EmailAlert");
+const LEDAlert = require("../app/LEDAlert");
+const StatsAlerter = require("../app/StatsAlerter");
+
 describe("StatisticsTest",function(){
     it("reportsAverageMinMaxx",function(){
         const r1 = 1.5;
@@ -23,6 +26,9 @@ describe("StatisticsTest",function(){
         // NAN (not-a-number)
         // Design the expect statement here.
         // Use https://www.w3schools.com/jsref/jsref_isnan.asp
+        expect(isNaN(stats.max)).tobe(true);
+        expect(isNaN(stats.min)).tobe(true);
+        expect(isNaN(stats.average)).tobe(true);
         
     })
     it("raises alerts when max is greater than threshold",function(){
