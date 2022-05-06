@@ -1,4 +1,5 @@
-const getStatistics=require("../app/statistics");
+//const getStatistics=require("../app/statistics");
+import {getStatistics,EmailAlert,LEDAlert,StatsAlerter} from '../app/statistics';
 describe("StatisticsTest",function(){
     it("reportsAverageMinMaxx",function(){
         const r1 = 1.5;
