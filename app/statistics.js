@@ -1,9 +1,10 @@
 module.exports = function getStatistics(numbers){
     var total = 0;
     var ret = {};
+    
     if (numbers.length > 0) {
-        for (i in numbers) {
-            total += i;
+        for (let i = 0; i < numbers.length; i++) {
+            total += numbers[i];
         }
          ret = {
             min: Math.min(...numbers),
@@ -13,9 +14,9 @@ module.exports = function getStatistics(numbers){
     }
     else {
         ret = {
-            min: '',
-            max: '',
-            average: ''
+            min: 'NaN',
+            max: 'NaN',
+            average: 'NaN'
         }
     }
     return ret;

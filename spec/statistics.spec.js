@@ -10,8 +10,7 @@ describe("StatisticsTest",function(){
         const r4= 4.5;
         const numbers=[r1,r2,r3,r4];
         const stats=getStatistics(numbers);
-        const epsilon=0.001;
-
+        const epsilon = 0.001;
         expect(Math.abs((stats.min-1.5))).toBeLessThan(epsilon);
         expect(Math.abs((stats.max- 8.9))).toBeLessThan(epsilon);
         expect(Math.abs((stats.average- 4.525))).toBeLessThan(epsilon);
@@ -25,9 +24,9 @@ describe("StatisticsTest",function(){
         // NAN (not-a-number)
         // Design the expect statement here.
         // Use https://www.w3schools.com/jsref/jsref_isnan.asp
-        expect(isNaN(stats.max)).tobe(true);
-        expect(isNaN(stats.min)).tobe(true);
-        expect(isNaN(stats.average)).tobe(true);
+        expect(isNaN(stats.max)).toBe(true);
+        expect(isNaN(stats.min)).toBe(true);
+        expect(isNaN(stats.average)).toBe(true);
         
     })
     it("raises alerts when max is greater than threshold",function(){
@@ -40,8 +39,8 @@ describe("StatisticsTest",function(){
          const statsAlerter=new StatsAlerter(maxThreshold, alerters);
          statsAlerter.checkAndAlert([99.8, 34.2, 4.5, 6.7]);
      
-         expect(emailAlert.emailSent).tobe(true);
-         expect(ledAlert.ledGlows).tobe(true);
+         expect(emailAlert.emailSent).toBe(true);
+         expect(ledAlert.ledGlows).toBe(true);
 
         
         
